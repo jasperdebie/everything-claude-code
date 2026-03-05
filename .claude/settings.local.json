@@ -7,7 +7,13 @@
       "mcp__notionMCP__notion-query-meeting-notes",
       "mcp__notionMCP__notion-fetch",
       "Read(//c/Github/Everything_Claude_Code/$APPDATA/Claude/**)",
-      "Read(//c/Github/Everything_Claude_Code/$HOME/.config/Claude/**)"
+      "Read(//c/Github/Everything_Claude_Code/$HOME/.config/Claude/**)",
+      "mcp__claude_ai_Microsoft_365__outlook_calendar_search",
+      "mcp__airtable__search_records",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; lines=text.split\\(''\\\\\\\\n''\\); [print\\(l\\) for l in lines[:120]]\")",
+      "Bash(mkdir -p ~/.claude/commands)",
+      "Bash(cp /c/Github/Everything_Claude_Code/commands/delaware-slides.md /c/Github/Everything_Claude_Code/commands/md2word.md /c/Github/Everything_Claude_Code/commands/md2wordjoriside.md /c/Github/Everything_Claude_Code/commands/meeting-prep.md /c/Github/Everything_Claude_Code/commands/read-mail.md ~/.claude/commands/)",
+      "mcp__airtable__list_bases"
     ]
   }
 }
