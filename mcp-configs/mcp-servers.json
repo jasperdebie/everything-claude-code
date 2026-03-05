@@ -88,6 +88,36 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/your/projects"],
       "description": "Filesystem operations (set your path)"
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"],
+      "description": "Browser automation and interaction via MCP"
+    },
+    "SAP_MCP": {
+      "command": "npx",
+      "args": ["tsx", "/path/to/your/sap-mcp-server.js"],
+      "env": {
+        "SAP_BASE_URL": "YOUR_SAP_BASE_URL_HERE",
+        "SAP_USERNAME": "YOUR_SAP_USERNAME_HERE",
+        "SAP_PASSWORD": "YOUR_SAP_PASSWORD_HERE"
+      },
+      "description": "SAP ABAP MCP server for SAP system operations"
+    },
+    "sap-researcher": {
+      "command": "npx",
+      "args": ["mcp-remote", "YOUR_SAP_RESEARCHER_MCP_URL", "--allow-http"],
+      "description": "SAP researcher remote MCP for SAP knowledge queries"
+    },
+    "notionMCP": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"],
+      "description": "Notion workspace operations - pages, databases, comments"
+    },
+    "knowledge-scraper-docs": {
+      "command": "/path/to/knowledge-scraper-mcp",
+      "args": [],
+      "description": "Knowledge scraper for documentation ingestion"
     }
   },
   "_comments": {

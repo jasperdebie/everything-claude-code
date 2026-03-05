@@ -4,7 +4,10 @@
       "mcp__claude_ai_Microsoft_365__outlook_email_search",
       "mcp__claude_ai_Microsoft_365__read_resource",
       "mcp__notionMCP__notion-search",
-      "mcp__notionMCP__notion-query-meeting-notes"
+      "mcp__notionMCP__notion-query-meeting-notes",
+      "mcp__notionMCP__notion-fetch",
+      "Read(//c/Github/Everything_Claude_Code/$APPDATA/Claude/**)",
+      "Read(//c/Github/Everything_Claude_Code/$HOME/.config/Claude/**)"
     ]
   }
 }
