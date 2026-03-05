@@ -13,7 +13,10 @@
       "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; lines=text.split\\(''\\\\\\\\n''\\); [print\\(l\\) for l in lines[:120]]\")",
       "Bash(mkdir -p ~/.claude/commands)",
       "Bash(cp /c/Github/Everything_Claude_Code/commands/delaware-slides.md /c/Github/Everything_Claude_Code/commands/md2word.md /c/Github/Everything_Claude_Code/commands/md2wordjoriside.md /c/Github/Everything_Claude_Code/commands/meeting-prep.md /c/Github/Everything_Claude_Code/commands/read-mail.md ~/.claude/commands/)",
-      "mcp__airtable__list_bases"
+      "mcp__airtable__list_bases",
+      "Bash(grep -i -o '.\\\\{0,200\\\\}cab.\\\\{0,200\\\\}')",
+      "Bash(grep -i -o '.\\\\{0,150\\\\}cab.\\\\{0,150\\\\}' \"C:\\\\Users\\\\debiej\\\\.claude\\\\projects\\\\c--Github-Everything-Claude-Code\\\\caab8fc8-7926-4a2a-b8a4-d0aa9053ad52\\\\tool-results\\\\mcp-notionMCP-notion-fetch-1772750473412.txt\")",
+      "mcp__airtable__list_tables"
     ]
   }
 }
