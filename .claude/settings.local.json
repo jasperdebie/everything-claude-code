@@ -16,7 +16,26 @@
       "mcp__airtable__list_bases",
       "Bash(grep -i -o '.\\\\{0,200\\\\}cab.\\\\{0,200\\\\}')",
       "Bash(grep -i -o '.\\\\{0,150\\\\}cab.\\\\{0,150\\\\}' \"C:\\\\Users\\\\debiej\\\\.claude\\\\projects\\\\c--Github-Everything-Claude-Code\\\\caab8fc8-7926-4a2a-b8a4-d0aa9053ad52\\\\tool-results\\\\mcp-notionMCP-notion-fetch-1772750473412.txt\")",
-      "mcp__airtable__list_tables"
+      "mcp__airtable__list_tables",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text''] if isinstance\\(data,list\\) else data[''text'']; print\\(text[:8000]\\)\")",
+      "WebSearch",
+      "Bash(python -c \":*)",
+      "WebFetch(domain:www.vrt.be)",
+      "mcp__sap-researcher__search_catalog",
+      "mcp__sap-researcher__lookup_fuzzy",
+      "Bash(grep -oi '[^\\\\\\\\]*[Aa]rchiv[^\\\\\\\\]*')",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; # Find all occurrences of Tim/innovation with context import re for m in re.finditer\\(r''.{0,300}\\(?:Tim Perremans|innovation|innovatie|SAP ILM|Data Archiving|Information eXperience\\).{0,300}'', text, re.IGNORECASE\\): print\\(''---''\\) print\\(m.group\\(\\)\\) print\\(\\) \")",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; import re for m in re.finditer\\(r''.{0,300}\\(?:Tim Perremans|innovation|innovatie|Tim \\).{0,300}'', text, re.IGNORECASE\\): print\\(''---''\\) print\\(m.group\\(\\)\\) print\\(\\) \")",
+      "mcp__airtable__describe_table",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; obj=json.loads\\(text\\); print\\(obj[''text''][:8000]\\)\")",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); text=data[0][''text'']; obj=json.loads\\(text\\); print\\(obj[''text''][8000:16000]\\)\")",
+      "Bash(grep -oP '.{0,300}\\(?i\\)miguel.{0,300}' \"C:\\\\Users\\\\debiej\\\\.claude\\\\projects\\\\c--Github-Everything-Claude-Code\\\\57815df1-ada1-4199-a944-41c4d4ed8239\\\\tool-results\\\\mcp-notionMCP-notion-fetch-1773064057733.txt\")",
+      "Bash(python3 -c \":*)",
+      "Bash(grep)",
+      "WebFetch(domain:nuxt.com)",
+      "WebFetch(domain:astro.build)",
+      "WebFetch(domain:github.com)",
+      "mcp__airtable__list_records"
     ]
   }
 }
