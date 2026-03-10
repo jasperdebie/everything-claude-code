@@ -57,11 +57,17 @@ Ask: "Klopt dit? Mag ik de taak aanmaken?" — wait for confirmation before proc
 
 ## Phase 2: Create the task
 
-### Step 1: Create the page
+### Step 1: Create the page with template
 
 Call `notionMCP:notion-create-pages` with:
 
-**Parent:** The "All Tasks" database URL: `https://www.notion.so/3436c8e925eb4810b85de72948fa9422`
+**Parent:** Use `data_source_id`: `5f831004-6192-491e-bf5c-0b134a176bd2`
+
+**Template:** Use `template_id`: `532e4678-aca4-4a52-be66-26c7ce2b92bd` (the "New page" template)
+
+This template automatically creates the body with: Key Points (toggle + AI block), Check-box Tasks, Meetings (with button), Updates (with button), and Summary sections.
+
+**IMPORTANT:** When using `template_id`, do NOT include `content` — the template provides it. Only set `properties`.
 
 **Properties** (only include fields that have values):
 
@@ -84,33 +90,31 @@ Call `notionMCP:notion-create-pages` with:
 | **Recur Unit** | Select — one of: `Day(s)`, `Week(s)`, `Month(s)`, `Month(s) on the Last Day`, `Month(s) on the First Weekday`, `Month(s) on the Last Weekday`, `Year(s)` |
 | **Days (Only if Set to 1 Day(s))** | Multi-select — specific weekdays, only when Recur Interval=1 and Recur Unit=Day(s) |
 
-### Step 2: Add the body template
+### Step 2: Fill in the body sections (if the user provided content)
 
-The page body MUST follow the "New page" template structure. Include this content in the page creation:
+If the user provided any body content (summary text, checkbox items, notes, etc.), fill in the template sections:
 
-```markdown
-## Key Points
-(empty toggle section)
+1. **Fetch the newly created page** via `notionMCP:notion-fetch` using the page URL returned from Step 1. This ensures the template has loaded.
+2. **Update sections** via `notionMCP:notion-update-page` with `command: "update_content"` using search-and-replace:
 
-## Check-box Tasks
-- [ ] .
+| Section | How to update |
+|---------|--------------|
+| **Check-box Tasks** | Replace `- [ ] .` with actual checkbox items from the user's request. Each item as `- [ ] item text` |
+| **Summary** | Replace the empty block after `## Summary` with the user's notes, context, links, or description |
+| **Key Points** | If the user provided key points, add them inside the toggle |
 
-## Meetings
-(empty section)
+**Template placeholders to match:**
+- Checkbox placeholder: `- [ ] .`
+- Summary section: the empty content after `## Summary`
 
-## Updates
-(empty section)
-
-## Summary
-```
-
-**Note:** The AI block and button elements from the original template cannot be created via API. The toggle and checkbox structure is the essential part.
+If the user did NOT provide body content, skip this step — the template defaults are fine.
 
 ### Step 3: Confirm success
 
 After creation, present:
 - The task name with a link to the created Notion page
 - A summary of which fields were set
+- Which body sections were filled in (if any)
 
 ---
 
