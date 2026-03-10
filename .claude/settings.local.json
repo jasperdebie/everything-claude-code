@@ -35,7 +35,10 @@
       "WebFetch(domain:nuxt.com)",
       "WebFetch(domain:astro.build)",
       "WebFetch(domain:github.com)",
-      "mcp__airtable__list_records"
+      "mcp__airtable__list_records",
+      "mcp__airtable__create_record",
+      "mcp__airtable__update_records",
+      "WebFetch(domain:www.youtube.com)"
     ]
   }
 }
