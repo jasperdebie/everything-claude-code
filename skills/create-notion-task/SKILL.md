@@ -100,14 +100,31 @@ If the user provided any body content (summary text, checkbox items, notes, etc.
 | Section | How to update |
 |---------|--------------|
 | **Check-box Tasks** | Replace `- [ ] .` with actual checkbox items from the user's request. Each item as `- [ ] item text` |
-| **Summary** | Replace the empty block after `## Summary` with the user's notes, context, links, or description |
+| **Summary** | Replace the empty block after `## Summary` with a thorough, well-structured summary. Always write this section extensively — include all available context: what the task is about, why it exists, background information, relevant details from emails or conversations, links, names of people involved, and any decisions or constraints. The summary should be clear enough that someone reading it weeks later immediately understands the full context without needing to ask questions. |
 | **Key Points** | If the user provided key points, add them inside the toggle |
 
 **Template placeholders to match:**
 - Checkbox placeholder: `- [ ] .`
 - Summary section: the empty content after `## Summary`
 
+**CRITICAL:** Only use `update_content` (search-and-replace), NEVER use `replace_content`. The template contains button elements and AI blocks that must be preserved. Only replace the specific text placeholders listed above — do not touch any other content in the page.
+
+**Updates section format:** If an update needs to be added, it MUST follow this exact structure (insert after the button element, before `<empty-block/>`):
+
+```markdown
+### <mention-date start="YYYY-MM-DD" startTime="HH:MM" timeZone="Europe/Brussels"/>  {toggle="true"}
+	The update text goes here, indented with a tab.
+```
+
+Each update is an H3 toggle heading with a `mention-date` timestamp, and the update content indented inside the toggle. New updates are added at the top (newest first), below the button but above older updates.
+
 If the user did NOT provide body content, skip this step — the template defaults are fine.
+
+### Outlook email context
+
+If the task is created based on or related to an Outlook email (e.g. via `/read-mail` or when the user references an email):
+- **Always** set the **Mail** property to the **subject line(s)** of the related email(s). If multiple emails, separate with ` | `.
+- Include relevant email context (sender, key points, action items) in the **Summary** section of the body.
 
 ### Step 3: Confirm success
 
