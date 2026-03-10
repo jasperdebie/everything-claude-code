@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "mcp__claude_ai_Microsoft_365__sharepoint_search",
+      "Bash(xargs grep -l \"delaware.*brand\\\\|brand.*guide\")",
+      "Bash(python skills/pptx/scripts/office/unpack.py skills/delaware-slides/assets/delaware-template.pptx /tmp/delaware-unpacked/)",
+      "Bash(python skills/pptx/scripts/thumbnail.py skills/delaware-slides/assets/delaware-template.pptx /tmp/delaware-thumbs)",
+      "Bash(python skills/pptx/scripts/office/soffice.py --headless --convert-to pdf skills/delaware-slides/assets/delaware-template.pptx)",
+      "Bash(where soffice)",
+      "Read(//c/Program Files/LibreOffice/program/**)",
+      "Read(//tmp/**)",
+      "Bash(python -c \":*)",
+      "Bash(python -m markitdown skills/delaware-slides/assets/delaware-template.pptx)",
+      "Bash(python skills/pptx/scripts/add_slide.py /tmp/delaware-unpacked/ slide53.xml)",
+      "Read(//c/tmp/delaware-unpacked/ppt/slides/**)"
+    ]
+  }
+}
