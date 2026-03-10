@@ -171,3 +171,4 @@ When the user describes urgency informally, map it:
 - Solman ticket numbers are 10-digit numbers (e.g. `4000150560`, `8300007744`). Detect these automatically and put them in the Ticket field.
 - Do NOT fill in formula, rollup, or automatic fields (Created, Edited, State, Type, Cold, Late, etc.) — these are computed by Notion.
 - NEVER create subtasks or use the Parent Task / Sub-Tasks fields. Always create tasks as top-level items. The user does not use the subtask hierarchy.
+- **NEVER create a new project.** Always search and use existing projects from the Projects database. Known customers: **Renson**, **Milcobel**, **Joris Ide**, **delaware**, **Fluvius**. If the project is not found, ask the user — do not create one.

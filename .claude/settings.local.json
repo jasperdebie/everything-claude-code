@@ -38,7 +38,9 @@
       "mcp__airtable__list_records",
       "mcp__airtable__create_record",
       "mcp__airtable__update_records",
-      "WebFetch(domain:www.youtube.com)"
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(item[''text''][:5000]\\) for item in data if ''text'' in item]\")",
+      "mcp__notionMCP__notion-query-database-view"
     ]
   }
 }
